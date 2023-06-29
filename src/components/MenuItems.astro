@@ -1,0 +1,29 @@
+---
+interface ItemMenu {
+  id: number;
+  link: string;
+  name: string;
+  label: string;
+}
+
+interface Props {
+  menuItems: ItemMenu[];
+}
+
+const { menuItems } = Astro.props;
+---
+
+{
+  menuItems.map((item) => {
+    return (
+      <li class="px-2 py-1 text-current">
+        <a
+          href={item.link}
+          class="inline-flex items-center justify-center text-sm cursor-pointer font-medium rounded whitespace-nowrap"
+        >
+          <span class="mx-1">{item.label}</span>
+        </a>
+      </li>
+    );
+  })
+}
