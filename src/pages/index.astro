@@ -1,5 +1,6 @@
 ---
-import Header from "../components/Header.astro";
+import Header from "@components/Header.astro";
+import Main from "@layout/Main.astro";
 ---
 
 <html lang="en">
@@ -13,7 +14,32 @@ import Header from "../components/Header.astro";
 	<body>
 		<Header />
 
-		<main id="content"></main>
+		<Main>
+			<section id="qd-header" class="relative">
+				<article class="w-full h-full min-h-screen">
+					<header>
+						<h2>Experience Tesla</h2>
+
+						<div>
+							<p>Schedule a Demo Drive Today</p>
+						</div>
+					</header>
+
+					<footer>
+						<a href="#">Demo driver</a>
+					</footer>
+
+					<div class="absolute inset-0">
+						<video
+							class="object-cover"
+							autoplay
+							muted
+							loop
+							src="/homepage-video.webm"></video>
+					</div>
+				</article>
+			</section>
+		</Main>
 	</body>
 </html>
 
