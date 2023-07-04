@@ -70,7 +70,7 @@ const menuOptions = [
 ---
 
 <header id="general-header" class="fixed top-0 left-0 right-0 z-50">
-  <div class="flex items-center justify-between">
+  <div class="relative flex items-center justify-between z-10">
     <div
       class="flex flex-grow items-center justify-start min-w-[120px] min-h-[56px] pl-8"
     >
@@ -93,7 +93,45 @@ const menuOptions = [
       </ol>
     </nav>
   </div>
+
+  <div
+    id="backdrop-nav"
+    class={`
+      absolute top-0
+      bg-black/5 backdrop-blur-lg rounded
+      origin-center
+      translate-x-[var(--backdrop-x)] translate-y-[var(--backdrop-y)]
+      w-[var(--backdrop-w)] h-[var(--backdrop-h)]
+      transition-all duration-500
+      ease-in-out opacity-0  z-0
+    `}
+  >
+  </div>
 </header>
+
+<script>
+  const itemsList = document.querySelectorAll("#general-header li");
+  const backdropNav = document.querySelector("#backdrop-nav") as HTMLElement;
+
+  itemsList.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      const { left, top, width, height } = item.getBoundingClientRect();
+
+      backdropNav.style.setProperty("--backdrop-x", `${left}px`);
+      backdropNav.style.setProperty("--backdrop-y", `${top}px`);
+      backdropNav.style.setProperty("--backdrop-w", `${width}px`);
+      backdropNav.style.setProperty("--backdrop-h", `${height}px`);
+
+      backdropNav.style.opacity = "1";
+      backdropNav.style.visibility = "visible";
+    });
+
+    item.addEventListener("mouseleave", () => {
+      backdropNav.style.opacity = "0";
+      backdropNav.style.visibility = "hidden";
+    });
+  });
+</script>
 
 <script>
   const domHeader = document.querySelector("#general-header") as HTMLElement;
