@@ -1,5 +1,6 @@
 ---
 import Section from "@layout/Section.astro";
+import Button from "./Button.astro";
 ---
 
 <Section sectionColor="white">
@@ -14,12 +15,7 @@ import Section from "@layout/Section.astro";
   </div>
 
   <div slot="section-footer">
-    <a
-      class="inline-flex items-center justify-center min-w-[264px] h-[40px] px-6 py-1 border-[2.4px] border-white rounded text-sm leading-4 text-current"
-      href="#"
-    >
-      <span class="text-current">Demo driver</span>
-    </a>
+    <Button btnText="Demo driver" />
   </div>
 
   <div slot="section-bakground">
