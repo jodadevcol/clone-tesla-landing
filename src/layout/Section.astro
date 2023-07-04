@@ -1,0 +1,27 @@
+---
+interface Props {
+  sectionColor: string;
+}
+
+const { sectionColor } = Astro.props;
+---
+
+<section class="section-content relative" data-header-color={sectionColor}>
+  <article class="w-full h-screen text-center">
+    <div
+      class=`relative flex flex-col items-center justify-center h-full text-${sectionColor} z-20`
+    >
+      <header class="w-full">
+        <slot name="section-header" />
+      </header>
+
+      <footer class="flex flex-col flex-grow justify-end pb-20">
+        <slot name="section-footer" />
+      </footer>
+    </div>
+
+    <div class="absolute inset-0 z-0">
+      <slot name="section-bakground" />
+    </div>
+  </article>
+</section>
