@@ -1,0 +1,27 @@
+---
+import Section from "@layout/Section.astro";
+
+interface Props {
+  imageFile: string;
+}
+
+const { imageFile } = Astro.props;
+---
+
+<Section sectionColor="white">
+  <div slot="section-header">
+    <slot name="information" />
+  </div>
+
+  <div slot="section-footer">
+    <slot name="call-to-action" />
+  </div>
+
+  <div class="w-full h-full" slot="section-bakground">
+    <img
+      class="w-full h-full object-cover object-center"
+      src={imageFile}
+      alt=""
+    />
+  </div>
+</Section>

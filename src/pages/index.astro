@@ -1,17 +1,60 @@
 ---
+import { ButtonTheme } from "@typests/*";
+
 import Layout from "@layout/Layout.astro";
-import HeroSection from "@components/HeroSection.astro";
-import ContentSection from "@components/ContentSection.astro";
+
+import Button from "@components/Button.astro";
+import ButtonBox from "@components/ButtonBox.astro";
+import HomeTop from "@components/HomeTop.astro";
+import HomeContent from "@components/HomeContent.astro";
+import TitleContent from "@components/TitleContent.astro";
 ---
 
 <Layout title="Electric Cars, Solar & Clean Energy | Tesla">
 	<div class="relative w-full h-screen overflow-auto snap-y snap-mandatory">
 		<div class="snap-start">
-			<HeroSection />
+			<HomeTop />
 		</div>
 
 		<div class="snap-start">
-			<ContentSection />
+			<HomeContent imageFile="/homepage-model-s-desktop.avif">
+				<div slot="information">
+					<TitleContent>Model S</TitleContent>
+
+					<div class="px-5 py-2">
+						<a class="text-current" href="#">Explore Inventory</a>
+					</div>
+				</div>
+
+				<ButtonBox slot="call-to-action">
+					<Button btnText="Custom Order" theme={ButtonTheme.LIGTH} />
+					<Button btnText="Demo Drive" theme={ButtonTheme.DARK} />
+				</ButtonBox>
+			</HomeContent>
+		</div>
+
+		<div class="snap-start">
+			<HomeContent imageFile="/homepage-model-3-desktop.avif" />
+		</div>
+
+		<div class="snap-start">
+			<HomeContent imageFile="/homepage-model-x-desktop.avif" />
+		</div>
+
+		<div class="snap-start">
+			<HomeContent imageFile="/homepage-model-y-desktop.avif" />
+		</div>
+
+		<div class="snap-start">
+			<HomeContent imageFile="/homepage-solarroof-desktop.avif" />
+		</div>
+
+		<div class="snap-start">
+			<HomeContent imageFile="/homepage-solarpanels-desktop.avif" />
+		</div>
+
+		<div class="snap-start">
+			<HomeContent imageFile="/homepage-powerwall-desktop.avif" />
 		</div>
 	</div>
 </Layout>

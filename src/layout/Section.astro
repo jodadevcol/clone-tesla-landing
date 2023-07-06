@@ -6,7 +6,10 @@ interface Props {
 const { sectionColor } = Astro.props;
 ---
 
-<section class="section-content relative" data-header-color={sectionColor}>
+<section
+  class="section-content relative max-h-screen overflow-hidden"
+  data-header-color={sectionColor}
+>
   <article class="w-full h-screen text-center">
     <div
       class=`relative flex flex-col items-center justify-center h-full text-${sectionColor} z-20`

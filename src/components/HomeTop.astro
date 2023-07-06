@@ -1,13 +1,14 @@
 ---
+import { ButtonTheme } from "@typests/*";
+
 import Section from "@layout/Section.astro";
 import Button from "./Button.astro";
+import TitleContent from "./TitleContent.astro";
 ---
 
 <Section sectionColor="white">
   <div slot="section-header">
-    <h2 class="mt-[18vh] px-5 text-4xl lg:text-[40px] font-medium text-current">
-      Experience Tesla
-    </h2>
+    <TitleContent>Experience Tesla</TitleContent>
 
     <div class="px-5 py-2">
       <p class="text-current">Schedule a Demo Drive Today</p>
@@ -15,7 +16,7 @@ import Button from "./Button.astro";
   </div>
 
   <div slot="section-footer">
-    <Button btnText="Demo driver" />
+    <Button btnText="Demo driver" theme={ButtonTheme.TRANSPARENT} />
   </div>
 
   <div slot="section-bakground">
