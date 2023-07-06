@@ -1,13 +1,21 @@
 ---
+import { ButtonTheme } from "src/types.ds";
 interface Props {
   btnText: string;
+  theme: ButtonTheme;
 }
 
-const { btnText } = Astro.props;
+const { btnText, theme } = Astro.props;
+
+const colorTheme = {
+  [ButtonTheme.DARK]: "bg-black/65 text-white backdrop-blur border-transparent",
+  [ButtonTheme.LIGTH]: "bg-white/80 text-gray backdrop-blur border-transparent",
+  [ButtonTheme.TRANSPARENT]: "border-white text-white",
+};
 ---
 
 <a
-  class="inline-flex items-center justify-center min-w-[264px] h-[40px] px-6 py-1 border-[2.4px] border-white rounded text-sm leading-4 text-current"
+  class={`inline-flex items-center justify-center min-w-[264px] h-[40px] px-6 py-1 border-[2.4px] rounded text-sm font-medium leading-4 ${colorTheme[theme]}`}
   href="#"
 >
   <span class="text-current">{btnText}</span>
