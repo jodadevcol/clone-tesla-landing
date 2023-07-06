@@ -14,6 +14,9 @@
       ],
       "@css/*": [
         "src/css/*"
+      ],
+      "@typests/*": [
+        "src/types.ds.ts"
       ]
     }
   }
