@@ -3,3 +3,8 @@ export enum ButtonTheme {
   LIGTH = 'ligth',
   TRANSPARENT = 'transparent'
 }
+
+export enum SectionTheme {
+  WHITE = 'white',
+  BLACK = 'black'
+}
