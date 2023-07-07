@@ -1,5 +1,5 @@
 ---
-import { ButtonTheme } from "@typests/*";
+import { ButtonTheme, SectionTheme } from "@typests/*";
 
 import Layout from "@layout/Layout.astro";
 
@@ -34,27 +34,122 @@ import TitleContent from "@components/TitleContent.astro";
 		</div>
 
 		<div class="snap-start">
-			<HomeContent imageFile="/homepage-model-3-desktop.avif" />
+			<HomeContent imageFile="/homepage-model-3-desktop.avif">
+				<div slot="information" class="text-black">
+					<TitleContent>Model 3</TitleContent>
+
+					<div class="px-5 py-2">
+						<p class="text-current">
+							Starting at $32,740 <br />
+							After Federal Tax Credit
+						</p>
+					</div>
+				</div>
+
+				<ButtonBox slot="call-to-action">
+					<Button btnText="Custom Order" theme={ButtonTheme.LIGTH} />
+					<Button btnText="Demo Drive" theme={ButtonTheme.DARK} />
+				</ButtonBox>
+			</HomeContent>
 		</div>
 
 		<div class="snap-start">
-			<HomeContent imageFile="/homepage-model-x-desktop.avif" />
+			<HomeContent
+				themeColor={SectionTheme.BLACK}
+				imageFile="/homepage-model-x-desktop.avif"
+			>
+				<div slot="information">
+					<TitleContent>Model X</TitleContent>
+
+					<div class="px-5 py-2">
+						<a class="text-current" href="#">Explore Inventory</a>
+					</div>
+				</div>
+
+				<ButtonBox slot="call-to-action">
+					<Button btnText="Custom Order" theme={ButtonTheme.LIGTH} />
+					<Button btnText="Demo Drive" theme={ButtonTheme.DARK} />
+				</ButtonBox>
+			</HomeContent>
 		</div>
 
 		<div class="snap-start">
-			<HomeContent imageFile="/homepage-model-y-desktop.avif" />
+			<HomeContent
+				themeColor={SectionTheme.BLACK}
+				imageFile="/homepage-model-y-desktop.avif"
+			>
+				<div slot="information">
+					<TitleContent>Model Y</TitleContent>
+
+					<div class="px-5 py-2">
+						<p class="text-current">
+							Starting at $40,240 <br />
+							After Federal Tax Credit
+						</p>
+					</div>
+				</div>
+
+				<ButtonBox slot="call-to-action">
+					<Button btnText="Custom Order" theme={ButtonTheme.LIGTH} />
+					<Button btnText="Demo Drive" theme={ButtonTheme.DARK} />
+				</ButtonBox>
+			</HomeContent>
 		</div>
 
 		<div class="snap-start">
-			<HomeContent imageFile="/homepage-solarroof-desktop.avif" />
+			<HomeContent
+				themeColor={SectionTheme.BLACK}
+				imageFile="/homepage-solarroof-desktop.avif"
+			>
+				<div slot="information">
+					<TitleContent>Solar Roof</TitleContent>
+
+					<div class="px-5 py-2">
+						<p class="text-current">Produce Clean Energy From Your Roof</p>
+					</div>
+				</div>
+
+				<ButtonBox slot="call-to-action">
+					<Button btnText="Order Now" theme={ButtonTheme.LIGTH} />
+					<Button btnText="Learn More" theme={ButtonTheme.DARK} />
+				</ButtonBox>
+			</HomeContent>
 		</div>
 
 		<div class="snap-start">
-			<HomeContent imageFile="/homepage-solarpanels-desktop.avif" />
+			<HomeContent
+				themeColor={SectionTheme.BLACK}
+				imageFile="/homepage-solarpanels-desktop.avif"
+			>
+				<div slot="information">
+					<TitleContent>Solar Panels</TitleContent>
+
+					<div class="px-5 py-2">
+						<a href="#">Schedule a Virtual Consultation</a>
+					</div>
+				</div>
+
+				<ButtonBox slot="call-to-action">
+					<Button btnText="Order Now" theme={ButtonTheme.LIGTH} />
+					<Button btnText="Learn More" theme={ButtonTheme.DARK} />
+				</ButtonBox>
+			</HomeContent>
 		</div>
 
 		<div class="snap-start">
-			<HomeContent imageFile="/homepage-powerwall-desktop.avif" />
+			<HomeContent
+				themeColor={SectionTheme.BLACK}
+				imageFile="/homepage-powerwall-desktop.avif"
+			>
+				<div slot="information">
+					<TitleContent>Powerwall</TitleContent>
+				</div>
+
+				<ButtonBox slot="call-to-action">
+					<Button btnText="Order Now" theme={ButtonTheme.LIGTH} />
+					<Button btnText="Learn More" theme={ButtonTheme.DARK} />
+				</ButtonBox>
+			</HomeContent>
 		</div>
 	</div>
 </Layout>
