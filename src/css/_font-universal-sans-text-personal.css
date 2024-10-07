@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'Universal-Sans-Display';
+	font-style: normal;
+	font-weight: normal;
+	src:
+		local('Universal-Sans-Display'),
+		url('../font/Universal-Sans-Display-Medium.woff2') format('woff2');
+}
+
+
+@font-face {
+	font-family: 'Universal-Sans-Text';
+	src:
+		local('Universal-Sans-Text'),
+		url('../font/Universal-Sans-Text-Bold.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Universal-Sans-Text';
+	src:
+		local('Universal-Sans-Text'),
+		url('../font/Universal-Sans-Text-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Universal-Sans-Text';
+	src:
+		local('Universal-Sans-Text') url('../font/Universal-Sans-Text-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
