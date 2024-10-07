@@ -1,5 +1,5 @@
 export enum ButtonTheme {
-  DARK = 'dark',
+  BLUE = 'blue',
   LIGTH = 'ligth',
   TRANSPARENT = 'transparent'
 }

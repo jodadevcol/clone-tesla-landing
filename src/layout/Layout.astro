@@ -1,5 +1,4 @@
 ---
-import Main from "@layout/Main.astro";
 import Header from "@components/Header.astro";
 
 import "@css/styles.css";
@@ -22,10 +21,16 @@ const { title } = Astro.props;
   <body>
     <Header />
 
-    <Main>
-      <slot />
-    </Main>
+		<main id="content">
+			<div class="w-screen h-screen overflow-hidden">
+				<slot />
+			</div>
+		</main>
   </body>
 
-  <style is:global></style>
+  <style is:global>
+		* {
+			scroll-behavior: smooth;
+		}
+	</style>
 </html>

@@ -1,101 +1,97 @@
 ---
-import Tesla from "./icons/Tesla.astro";
-import MenuItems from "./MenuItems.astro";
+import Tesla from './icons/Tesla.astro'
+import MenuItems from './MenuItems.astro'
 
 const menuModels = [
   {
     id: 1,
-    link: "#",
-    name: "model_s",
-    label: "Model S",
+    link: '#',
+    name: 'model_s',
+    label: 'Model S'
   },
   {
     id: 2,
-    link: "#",
-    name: "model_3",
-    label: "Model 3",
-  },
-  {
-    id: 3,
-    link: "#",
-    name: "model_x",
-    label: "Model X",
-  },
-  {
-    id: 4,
-    link: "#",
-    name: "model_y",
-    label: "Model Y",
-  },
-  {
-    id: 5,
-    link: "#",
-    name: "solar_roof",
-    label: "Solar Roof",
-  },
-  {
-    id: 6,
-    link: "#",
-    name: "solar_panels",
-    label: "Solar Panels",
-  },
-  {
-    id: 7,
-    link: "#",
-    name: "powerwall",
-    label: "Powerwall",
-  },
-];
+    link: '#',
+    name: 'model_3',
+    label: 'Model 3'
+  }
+  // {
+  //   id: 3,
+  //   link: "#",
+  //   name: "model_x",
+  //   label: "Model X",
+  // },
+  // {
+  //   id: 4,
+  //   link: "#",
+  //   name: "model_y",
+  //   label: "Model Y",
+  // },
+  // {
+  //   id: 5,
+  //   link: "#",
+  //   name: "solar_roof",
+  //   label: "Solar Roof",
+  // },
+  // {
+  //   id: 6,
+  //   link: "#",
+  //   name: "solar_panels",
+  //   label: "Solar Panels",
+  // },
+  // {
+  //   id: 7,
+  //   link: "#",
+  //   name: "powerwall",
+  //   label: "Powerwall",
+  // },
+]
 
 const menuOptions = [
   {
     id: 101,
-    link: "#",
-    name: "shop",
-    label: "Shop",
+    link: '#',
+    name: 'shop',
+    label: 'Shop'
   },
   {
     id: 102,
-    link: "#",
-    name: "account",
-    label: "Account",
+    link: '#',
+    name: 'account',
+    label: 'Account'
   },
   {
     id: 103,
-    link: "#",
-    name: "menu",
-    label: "Menu",
-  },
-];
+    link: '#',
+    name: 'menu',
+    label: 'Menu'
+  }
+]
 ---
 
-<header id="general-header" class="fixed top-0 left-0 right-0 z-50">
-  <div class="relative flex items-center justify-between z-10">
-    <div
-      class="flex flex-grow items-center justify-start min-w-[120px] min-h-[56px] pl-8"
-    >
-      <a href="#" class="flex w-[120px] h-6">
+<header id='general-header' class='fixed top-0 left-0 right-0 z-50'>
+  <div class='relative flex items-center justify-between z-10'>
+    <div class='flex flex-grow items-center justify-start min-w-[120px] min-h-[56px] pl-8'>
+      <a href='#' class='flex w-[120px] h-6'>
         <Tesla />
       </a>
     </div>
 
-    <nav
-      class="flex flex-grow basis-0 items-center justify-center min-h-[56px]"
-    >
-      <ol class="flex items-center justify-center">
+    <nav class='flex flex-grow basis-0 items-center justify-center min-h-[56px]'>
+      <ol class='flex items-center justify-center'>
         <MenuItems menuItems={menuModels} />
       </ol>
     </nav>
 
-    <nav class="flex flex-grow items-center justify-end min-h-[56px] pr-8">
-      <ol class="flex items-center justify-end">
+    <nav class='flex flex-grow items-center justify-end min-h-[56px] pr-8'>
+      <ol class='flex items-center justify-end'>
         <MenuItems menuItems={menuOptions} />
       </ol>
     </nav>
   </div>
 
   <div
-    id="backdrop-nav"
+    id='backdrop-nav'
     class={`
       absolute top-0
       bg-black/5 backdrop-blur-lg rounded
@@ -110,54 +106,51 @@ const menuOptions = [
 </header>
 
 <script>
-  const itemsList = document.querySelectorAll("#general-header li");
-  const backdropNav = document.querySelector("#backdrop-nav") as HTMLElement;
+  const itemsList = document.querySelectorAll('#general-header li')
+  const backdropNav = document.querySelector('#backdrop-nav') as HTMLElement
 
   itemsList.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      const { left, top, width, height } = item.getBoundingClientRect();
+    item.addEventListener('mouseenter', () => {
+      const { left, top, width, height } = item.getBoundingClientRect()
 
-      backdropNav.style.setProperty("--backdrop-x", `${left}px`);
-      backdropNav.style.setProperty("--backdrop-y", `${top}px`);
-      backdropNav.style.setProperty("--backdrop-w", `${width}px`);
-      backdropNav.style.setProperty("--backdrop-h", `${height}px`);
+      backdropNav.style.setProperty('--backdrop-x', `${left}px`)
+      backdropNav.style.setProperty('--backdrop-y', `${top}px`)
+      backdropNav.style.setProperty('--backdrop-w', `${width}px`)
+      backdropNav.style.setProperty('--backdrop-h', `${height}px`)
 
-      backdropNav.style.opacity = "1";
-      backdropNav.style.visibility = "visible";
-    });
+      backdropNav.style.opacity = '1'
+      backdropNav.style.visibility = 'visible'
+    })
 
-    item.addEventListener("mouseleave", () => {
-      backdropNav.style.opacity = "0";
-      backdropNav.style.visibility = "hidden";
-    });
-  });
+    item.addEventListener('mouseleave', () => {
+      backdropNav.style.opacity = '0'
+      backdropNav.style.visibility = 'hidden'
+    })
+  })
 </script>
 
 <script>
-  const domHeader = document.querySelector("#general-header") as HTMLElement;
-  const domSectionsContent = document.querySelectorAll(".section-content");
+  const domHeader = document.querySelector('#general-header') as HTMLElement
+  const domSectionsContent = document.querySelectorAll('.section-content')
 
   const observerOptions = {
     root: null,
-    rootMargin: "0px",
-    threshold: 0.9,
-  };
+    rootMargin: '0px',
+    threshold: 0.9
+  }
 
   const observerCallback = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entrie) => {
-      const { isIntersecting } = entrie;
+      const { isIntersecting } = entrie
 
       if (isIntersecting) {
-        const color = entrie.target.getAttribute("data-header-color");
-        domHeader.style.color = color;
+        const color = entrie.target.getAttribute('data-header-color')
+        domHeader.style.color = color
       }
-    });
-  };
+    })
+  }
 
-  const observerInstance = new IntersectionObserver(
-    observerCallback,
-    observerOptions
-  );
+  const observerInstance = new IntersectionObserver(observerCallback, observerOptions)
 
-  domSectionsContent.forEach((section) => observerInstance.observe(section));
+  domSectionsContent.forEach((section) => observerInstance.observe(section))
 </script>

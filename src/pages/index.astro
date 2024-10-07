@@ -1,155 +1,65 @@
 ---
-import { ButtonTheme, SectionTheme } from "@typests/*";
+import { ButtonTheme } from '@typests/*'
 
-import Layout from "@layout/Layout.astro";
+import Layout from '@layout/Layout.astro'
 
-import Button from "@components/Button.astro";
-import ButtonBox from "@components/ButtonBox.astro";
-import HomeTop from "@components/HomeTop.astro";
-import HomeContent from "@components/HomeContent.astro";
-import TitleContent from "@components/TitleContent.astro";
+import Button from '@components/Button.astro'
+import TitleContent from '@components/TitleContent.astro'
+import Section from '@layout/Section.astro'
 ---
 
-<Layout title="Electric Cars, Solar & Clean Energy | Tesla">
-	<div class="relative w-full h-screen overflow-auto snap-y snap-mandatory">
-		<div class="snap-start">
-			<HomeTop />
-		</div>
+<Layout title='Electric Cars, Solar & Clean Energy | Tesla'>
+  <div class='relative w-full h-screen overflow-auto snap-y snap-mandatory'>
+    <div class='snap-start'>
+      <Section>
+        <div class='mt-3vh' slot='section-header'>
+          <TitleContent>Model Y</TitleContent>
 
-		<div class="snap-start">
-			<HomeContent imageFile="/homepage-model-s-desktop.avif">
-				<div slot="information">
-					<TitleContent>Model S</TitleContent>
+          <h3 class='mt-1 text-3xl leading-9 font-medium font-display'>
+            <a class='block w-fit mx-auto shadow-link hover:shadow-link-hover transition-shadow duration-330 ease-bezier' href='/'>$0 Due at Signing</a>
+          </h3>
+          <p class='mt-1 font-sans'>
+            <span class="pb-1">
+              <span class='font-medium text-lg leading-tight'>From $31,490</span><sub class='text-[8px] -top-2 font-normal'>1</sub>
+            </span>
+          </p>
+        </div>
 
-					<div class="px-5 py-2">
-						<a class="text-current" href="#">Explore Inventory</a>
-					</div>
-				</div>
+        <div class="flex items-center justify-center gap-x-5" slot='section-footer'>
+					<Button btnText='Demo Drive' theme={ButtonTheme.BLUE} />
+					<Button btnText='Order Now' theme={ButtonTheme.LIGTH} />
+        </div>
 
-				<ButtonBox slot="call-to-action">
-					<Button btnText="Custom Order" theme={ButtonTheme.LIGTH} />
-					<Button btnText="Demo Drive" theme={ButtonTheme.DARK} />
-				</ButtonBox>
-			</HomeContent>
-		</div>
+        <picture slot='section-bakground' class='h-screen'>
+          <img class='size-full object-cover object-center' src='/img/homepage-model-y-desktop-us.avif' alt='' />
+        </picture>
+      </Section>
+    </div>
 
-		<div class="snap-start">
-			<HomeContent imageFile="/homepage-model-3-desktop.avif">
-				<div slot="information" class="text-black">
-					<TitleContent>Model 3</TitleContent>
+    <div class='snap-start'>
+      <Section>
+        <div class='mt-3vh' slot='section-header'>
+          <TitleContent>Model 3</TitleContent>
 
-					<div class="px-5 py-2">
-						<p class="text-current">
-							Starting at $32,740 <br />
-							After Federal Tax Credit
-						</p>
-					</div>
-				</div>
+          <h3 class='mt-1 text-3xl leading-9 font-medium font-display'>
+            <a class='block w-fit mx-auto shadow-link hover:shadow-link-hover transition-shadow duration-330 ease-bezier' href='/'>$0 Due at Signing</a>
+          </h3>
+          <p class='mt-1 font-sans'>
+            <span class="pb-1">
+              <span class='font-medium text-lg leading-tight'>From $34,990</span><sub class='text-[8px] -top-2 font-normal'>1</sub>
+            </span>
+          </p>
+        </div>
 
-				<ButtonBox slot="call-to-action">
-					<Button btnText="Custom Order" theme={ButtonTheme.LIGTH} />
-					<Button btnText="Demo Drive" theme={ButtonTheme.DARK} />
-				</ButtonBox>
-			</HomeContent>
-		</div>
+        <div class="flex items-center justify-center gap-x-5" slot='section-footer'>
+					<Button btnText='Demo Drive' theme={ButtonTheme.BLUE} />
+					<Button btnText='Order Now' theme={ButtonTheme.LIGTH} />
+        </div>
 
-		<div class="snap-start">
-			<HomeContent
-				themeColor={SectionTheme.BLACK}
-				imageFile="/homepage-model-x-desktop.avif"
-			>
-				<div slot="information">
-					<TitleContent>Model X</TitleContent>
-
-					<div class="px-5 py-2">
-						<a class="text-current" href="#">Explore Inventory</a>
-					</div>
-				</div>
-
-				<ButtonBox slot="call-to-action">
-					<Button btnText="Custom Order" theme={ButtonTheme.LIGTH} />
-					<Button btnText="Demo Drive" theme={ButtonTheme.DARK} />
-				</ButtonBox>
-			</HomeContent>
-		</div>
-
-		<div class="snap-start">
-			<HomeContent
-				themeColor={SectionTheme.BLACK}
-				imageFile="/homepage-model-y-desktop.avif"
-			>
-				<div slot="information">
-					<TitleContent>Model Y</TitleContent>
-
-					<div class="px-5 py-2">
-						<p class="text-current">
-							Starting at $40,240 <br />
-							After Federal Tax Credit
-						</p>
-					</div>
-				</div>
-
-				<ButtonBox slot="call-to-action">
-					<Button btnText="Custom Order" theme={ButtonTheme.LIGTH} />
-					<Button btnText="Demo Drive" theme={ButtonTheme.DARK} />
-				</ButtonBox>
-			</HomeContent>
-		</div>
-
-		<div class="snap-start">
-			<HomeContent
-				themeColor={SectionTheme.BLACK}
-				imageFile="/homepage-solarroof-desktop.avif"
-			>
-				<div slot="information">
-					<TitleContent>Solar Roof</TitleContent>
-
-					<div class="px-5 py-2">
-						<p class="text-current">Produce Clean Energy From Your Roof</p>
-					</div>
-				</div>
-
-				<ButtonBox slot="call-to-action">
-					<Button btnText="Order Now" theme={ButtonTheme.LIGTH} />
-					<Button btnText="Learn More" theme={ButtonTheme.DARK} />
-				</ButtonBox>
-			</HomeContent>
-		</div>
-
-		<div class="snap-start">
-			<HomeContent
-				themeColor={SectionTheme.BLACK}
-				imageFile="/homepage-solarpanels-desktop.avif"
-			>
-				<div slot="information">
-					<TitleContent>Solar Panels</TitleContent>
-
-					<div class="px-5 py-2">
-						<a href="#">Schedule a Virtual Consultation</a>
-					</div>
-				</div>
-
-				<ButtonBox slot="call-to-action">
-					<Button btnText="Order Now" theme={ButtonTheme.LIGTH} />
-					<Button btnText="Learn More" theme={ButtonTheme.DARK} />
-				</ButtonBox>
-			</HomeContent>
-		</div>
-
-		<div class="snap-start">
-			<HomeContent
-				themeColor={SectionTheme.BLACK}
-				imageFile="/homepage-powerwall-desktop.avif"
-			>
-				<div slot="information">
-					<TitleContent>Powerwall</TitleContent>
-				</div>
-
-				<ButtonBox slot="call-to-action">
-					<Button btnText="Order Now" theme={ButtonTheme.LIGTH} />
-					<Button btnText="Learn More" theme={ButtonTheme.DARK} />
-				</ButtonBox>
-			</HomeContent>
-		</div>
-	</div>
+        <picture slot='section-bakground' class='h-screen'>
+          <img class='size-full object-cover object-center' src='/img/homepage-model-3-desktop-us.avif' alt='' />
+        </picture>
+      </Section>
+    </div>
+  </div>
 </Layout>
